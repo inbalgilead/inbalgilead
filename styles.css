@@ -577,4 +577,7 @@ footer {
   .carousel-btn { display: none; }
   .carousel-wrapper { gap: 0; }
   .content-card { flex: 0 0 85vw; }
+
+  /* Keep "RECENT CONTENT" label on one line */
+  .content-section .section-label { font-size: 1rem; letter-spacing: 0.1em; }
 }
