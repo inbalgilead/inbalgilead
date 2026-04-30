@@ -6,7 +6,7 @@
   <title>Inbal Gilead</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Livvic:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -20,52 +20,75 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#workshops">Workshops</a></li>
         <li><a href="#content">Content</a></li>
-        <li><a href="#contact" class="btn-nav">Get in touch</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner">
+    <div class="hero-text">
       <h1>Inbal Gilead</h1>
       <p class="tagline">I'm a product leader with a deep data edge, helping teams build smarter, faster, and more confidently.</p>
-      <a href="https://linkedin.com/in/inbal-gilead" target="_blank" class="btn-primary">Connect on LinkedIn</a>
+      <div class="hero-links">
+        <a href="#contact" class="contact-link">Contact me</a>
+        <a href="https://linkedin.com/in/inbal-gilead" target="_blank" class="icon-link" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#231f20"><rect width="24" height="24" rx="4"/><path d="M6.5 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5 10h3v9H5v-9zm5 0h2.9v1.3h.04C13.36 10.5 14.4 10 15.7 10c2.9 0 3.3 1.9 3.3 4.4V19h-3v-4c0-1 0-2.2-1.4-2.2-1.4 0-1.6 1.1-1.6 2.1V19H10v-9z" fill="#e8e0d8"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <!-- Replace photo.jpg with your actual headshot file -->
+      <img src="photo.jpg" alt="Inbal Gilead" onerror="this.style.display='none'" />
     </div>
   </section>
 
-  <!-- PILLARS -->
-  <section class="pillars">
-    <div class="container">
-      <div class="pillar">
-        <div class="pillar-icon">&#9670;</div>
-        <h3>Product First</h3>
-        <p>I've led product from zero to scale. I don't just build what's possible, I build what matters.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">&#9670;</div>
-        <h3>Data Deep</h3>
-        <p>I've worked with data from all &amp; every angle: modeling, engineering, analytics, ML, AI, and culture.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">&#9670;</div>
-        <h3>First Principles Thinker</h3>
-        <p>I've worked across startups, scale-ups, and mature orgs. I bring pattern recognition from many corners of the tech world.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">&#9670;</div>
-        <h3>Practical Partner</h3>
-        <p>People call me when they need clarity, momentum, and someone who just gets it.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
+  <!-- ABOUT ME -->
   <section class="about" id="about">
-    <div class="container about-inner">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>As an independent product and data strategy consultant, I work with organizations to unlock clarity, focus, and forward momentum in complex environments. Whether it's a big strategic shift or a specific challenge you're facing, I'm always happy to contribute my perspective and help you think it through.</p>
+    <div class="container">
+      <span class="section-label">ABOUT ME</span>
+      <p class="about-lead">With years of working directly with cross-functional teams, my expertise turns complex data and product challenges into clear, actionable solutions.</p>
+      <p class="about-lead">I've led high-performing teams, fostering collaboration across product, data, and engineering, with a strategic lens on product-market fit, operational efficiency, and go-to-market readiness.</p>
+
+      <!-- PILLARS -->
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon">
+            <img src="productfirst.png" alt="Product First" />
+          </div>
+          <h3>Product First</h3>
+          <p>I've led product from zero to scale. I don't just build what's possible, I build what matters.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <img src="datadeep.png" alt="Data Deep" class="icon-lg" />
+          </div>
+          <h3>Data Deep</h3>
+          <p>I've worked with data from all &amp; every angle: modeling, engineering, analytics, ML, AI, and culture.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <img src="firstprinciplethinker.png" alt="First Principles Thinker" />
+          </div>
+          <h3>First Principles Thinker</h3>
+          <p>I've worked across startups, scale-ups, and mature orgs; internal tools and customer-facing platforms. I bring pattern recognition from many corners of the tech world.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <img src="practicalpartner.png" alt="Practical Partner" />
+          </div>
+          <h3>Practical Partner</h3>
+          <p>People call me when they need clarity, momentum, and someone who just gets it.</p>
+        </div>
+      </div>
+
+      <!-- LOGO STRIP -->
+      <div class="logo-strip">
+        <img src="logo-8200.svg" alt="8200" />
+        <img src="intel-logo.png" alt="Intel" />
+        <img src="everc-logo.png" alt="Everc" />
+        <img src="Sisense_logo.png" alt="Sisense" />
+        <img src="ZipRecruiter_logo" alt="ZipRecruiter" />
       </div>
     </div>
   </section>
@@ -73,41 +96,68 @@
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="container">
-      <h2>How I Can Help</h2>
+      <span class="section-label">SERVICES</span>
+      <p class="section-intro">As an independent product and data strategy consultant, I work with organizations to unlock clarity, focus, and forward momentum in complex environments.</p>
+      <p class="section-subhead">What I can help with:</p>
+
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service">
           <h3>Data-driven Culture &amp; AI Adoption</h3>
           <p>Guiding teams through the strategic, cultural, and operational steps required to use data &amp; AI effectively across the org.</p>
         </div>
-        <div class="service-card">
-          <h3>Building High-Performing Product Orgs</h3>
+        <div class="service">
+          <h3>Scaling Product Orgs</h3>
           <p>Helping leaders structure teams and processes that serve their orgs.</p>
         </div>
-        <div class="service-card">
+        <div class="service">
           <h3>Productizing Data &amp; AI</h3>
-          <p>Working with data or AI product and engineering teams to turn complex systems into scalable, business-aligned product capabilities.</p>
+          <p>Turning complex data &amp; AI systems into scalable, business-aligned products.</p>
         </div>
+      </div>
+
+      <p class="section-closing">Whether it's a big strategic shift or a specific challenge you're facing, I'm always happy to contribute my perspective and help you think it through.</p>
+
+      <!-- LOGO STRIP -->
+      <div class="logo-strip">
+        <img src="swimm-logo.png" alt="Swimm" />
+        <img src="IVIX_Logo.png" alt="IVIX" />
+        <img src="vectorious_logo.webp" alt="Vectorious" />
+        <img src="quago-logo.png" alt="Quago" />
+        <!-- solid logo intentionally omitted -->
       </div>
     </div>
   </section>
 
-  <!-- WORKSHOPS -->
+  <!-- SESSIONS & WORKSHOPS -->
   <section class="workshops" id="workshops">
     <div class="container">
-      <h2>Workshops &amp; Learning</h2>
+      <span class="section-label">SESSIONS &amp; WORKSHOPS</span>
+      <p class="section-intro">I care as deeply about learning and fostering talent as I do about building great products and data-driven organizations.</p>
+      <p class="section-intro">I offer hands-on, high-impact workshops designed to help teams level up their thinking, decision-making, and collaboration.</p>
+      <p class="section-intro"><em>Each session is tailored to the specific team and context</em> — because while the core concepts are widely valuable, the impact comes from making them truly practical and relevant to the people in the room.</p>
+
       <div class="workshops-grid">
-        <div class="workshop-card">
-          <h3>The Data Advantage: Building Skills for Product Managers</h3>
+        <div class="workshop">
+          <h3>The Data Advantage:<br/>Building Skills for Product Managers</h3>
           <p>An actionable half-day workshop on using data to make better product decisions — focusing on metrics, hypotheses, and intuition to solve real-world product challenges.</p>
         </div>
-        <div class="workshop-card">
+        <div class="workshop">
           <h3>Planning Inspiration</h3>
-          <p>A facilitation-driven workshop that guides leadership teams through strategy, prioritization, and roadmap creation.</p>
+          <p>A facilitation-driven workshop that guides leadership teams through strategy, prioritization, and roadmap creation. Throughout the workshop, I share my philosophy on prioritizing outcomes over tasks, aligning on success definition from day 1, and more.</p>
         </div>
-        <div class="workshop-card speaking">
-          <h3>Speaking Engagements</h3>
-          <p>I also deliver tailored talks and learning sessions on topics across product, data, and leadership.</p>
-        </div>
+      </div>
+
+      <p class="speaking-note">I also deliver tailored talks and learning sessions on topics across product, data, and leadership.<br/><strong>Recent sessions include</strong> <em>The Future of Analytics, The Subtle Art of Killing Products, What is a Data Product Manager?</em>, and more.</p>
+
+      <!-- LOGO STRIP -->
+      <div class="logo-strip">
+        <img src="giveandtech_logo.webp" alt="Give & Tech" />
+        <img src="wids-logo.png" alt="Women in Data Science" />
+        <img src="hayadata-logo.png" alt="hayaData" />
+        <img src="Armis_logo.png" alt="Armis" />
+        <img src="Kaltura_logo.png" alt="Kaltura" />
+        <img src="maccabi_logo.webp" alt="Maccabi" />
+        <img src="jolt_logo.png" alt="Jolt" />
       </div>
     </div>
   </section>
@@ -115,54 +165,86 @@
   <!-- CONTENT -->
   <section class="content-section" id="content">
     <div class="container">
-      <h2>Content &amp; Thought Leadership</h2>
-      <div class="content-grid">
-        <a href="https://medium.com" target="_blank" class="content-card">
-          <span class="content-type">Article</span>
-          <h4>Retro is the stepson of planning</h4>
+      <span class="section-label">CONTENT</span>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn carousel-prev" aria-label="Previous">&#8592;</button>
+        <div class="content-grid" id="contentCarousel">
+        <div class="content-card">
+          <iframe src="https://anchor.fm/mor-nitzan/embed/episodes/5---e3bkk2g" width="100%" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <p class="content-title">DATA &amp; AI | מדברים עם מור ניצן</p>
+        </div>
+        <div class="content-card">
+          <iframe src="https://open.spotify.com/embed/episode/15V1ry1dPMB0Sym6mIz8i8" width="100%" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <p class="content-title">Founders &amp; Product</p>
+        </div>
+        <a class="content-card content-link" href="https://medium.com/ziprecruiter-tech/retro-is-the-stepson-of-planning-3a1b340ff8f9" target="_blank">
+          <img src="retro is the stepson of planning.webp" alt="Retro is the stepson of planning" class="content-img" />
+          <p class="content-title">Retro is the stepson of planning</p>
         </a>
-        <a href="https://linkedin.com/in/inbal-gilead" target="_blank" class="content-card">
-          <span class="content-type">Article</span>
-          <h4>Product Mindset Makes Good Analysts</h4>
+        <a class="content-card content-link" href="https://www.youtube.com/watch?v=80YqgMMUwJg" target="_blank">
+          <div class="yt-thumb">
+            <img src="https://img.youtube.com/vi/80YqgMMUwJg/hqdefault.jpg" alt="HayaData 2025 — Product Mindset Makes Good Analysts" class="content-img" />
+            <div class="yt-play">&#9654;</div>
+          </div>
+          <p class="content-title">HayaData 2025 — Product Mindset Makes Good Analysts</p>
         </a>
-        <a href="https://linkedin.com/in/inbal-gilead" target="_blank" class="content-card">
-          <span class="content-type">Post (Hebrew)</span>
-          <h4>למה זה בכלל טוב למדוד</h4>
+        <a class="content-card content-link" href="https://medium.com/@gi.inbal/product-mindset-makes-good-analysts-75f63331cd45" target="_blank">
+          <img src="product mindset makes good analysts.webp" alt="Product Mindset Makes Good Analysts" class="content-img" />
+          <p class="content-title">Product Mindset Makes Good Analysts</p>
         </a>
-        <a href="https://linkedin.com/in/inbal-gilead" target="_blank" class="content-card">
-          <span class="content-type">Post (Hebrew)</span>
-          <h4>איך בונים מטריקות מוצר</h4>
-        </a>
-        <a href="https://linkedin.com/in/inbal-gilead" target="_blank" class="content-card">
-          <span class="content-type">Podcast</span>
-          <h4>DATA &amp; AI | מדברים עם מור ניצן</h4>
-        </a>
-        <a href="https://linkedin.com/in/inbal-gilead" target="_blank" class="content-card">
-          <span class="content-type">Talk</span>
-          <h4>Founders &amp; Product</h4>
-        </a>
+        </div>
+        <button class="carousel-btn carousel-next" aria-label="Next">&#8594;</button>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container contact-inner">
-      <h2>Let's Talk</h2>
-      <p>Have a challenge you're working through? I'd love to hear about it.</p>
-      <div class="contact-links">
-        <a href="mailto:inbalgilead@gmail.com" class="btn-primary">inbalgilead@gmail.com</a>
-        <a href="https://linkedin.com/in/inbal-gilead" target="_blank" class="btn-secondary">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Inbal Gilead. All rights reserved.</p>
+  <footer id="contact">
+    <div class="footer-inner">
+      <span>Contact me</span>
+      <a href="https://linkedin.com/in/inbal-gilead" target="_blank" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#231f20"><rect width="24" height="24" rx="4"/><path d="M6.5 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5 10h3v9H5v-9zm5 0h2.9v1.3h.04C13.36 10.5 14.4 10 15.7 10c2.9 0 3.3 1.9 3.3 4.4V19h-3v-4c0-1 0-2.2-1.4-2.2-1.4 0-1.6 1.1-1.6 2.1V19H10v-9z" fill="#e8e0d8"/></svg>
+      </a>
+      <a href="mailto:inbalgilead@gmail.com" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#231f20"><rect width="24" height="24" rx="12"/><path d="M5 8l7 5 7-5M5 8v8h14V8H5z" stroke="#e8e0d8" stroke-width="1.5" fill="none"/></svg>
+      </a>
+      <a href="https://sessionize.com/InbalGilead/" target="_blank" aria-label="Sessionize">
+        <img src="sessionize-logo.png" alt="Sessionize" class="footer-logo" />
+      </a>
     </div>
   </footer>
 
+  <script>
+    const carousel = document.getElementById('contentCarousel');
+    const cardWidth = () => carousel.querySelector('.content-card').offsetWidth + 24; // card + gap
+
+    // Clone cards for infinite effect
+    const originals = Array.from(carousel.children);
+    originals.forEach(card => carousel.appendChild(card.cloneNode(true)));
+    originals.forEach(card => carousel.insertBefore(card.cloneNode(true), carousel.firstChild));
+
+    const totalOriginals = originals.length;
+
+    // Start at the first real card (after the prepended clones)
+    carousel.scrollLeft = cardWidth() * totalOriginals;
+
+    // Silently jump when hitting cloned zones
+    carousel.addEventListener('scroll', () => {
+      const maxReal = cardWidth() * totalOriginals * 2;
+      const minReal = cardWidth() * totalOriginals;
+      if (carousel.scrollLeft >= maxReal) {
+        carousel.scrollLeft -= cardWidth() * totalOriginals;
+      } else if (carousel.scrollLeft <= 0) {
+        carousel.scrollLeft += cardWidth() * totalOriginals;
+      }
+    });
+
+    document.querySelector('.carousel-prev').addEventListener('click', () => {
+      carousel.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+    });
+    document.querySelector('.carousel-next').addEventListener('click', () => {
+      carousel.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
