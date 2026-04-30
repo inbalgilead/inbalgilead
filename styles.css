@@ -114,16 +114,28 @@ nav ul a:hover { color: #a4896f; }
 .hero-links {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
 }
 
-.contact-link {
+.btn-cta {
+  display: inline-block;
+  background-color: #231f20;
+  color: #e8e0d8;
+  padding: 0.85rem 2.2rem;
+  border-radius: 2rem;
+  font-family: 'Livvic', sans-serif;
   font-weight: 700;
-  font-size: 1.2rem;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  color: #231f20;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s;
+}
+
+.btn-cta:hover { background-color: #a4896f; }
+
+.btn-cta-sm {
+  padding: 0.72rem 1.87rem;
+  font-size: 0.94rem;
 }
 
 .icon-link {
@@ -298,6 +310,12 @@ nav ul a:hover { color: #a4896f; }
   margin: 3rem auto 0;
   color: #231f20;
   line-height: 1.8;
+}
+
+.services-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
 }
 
 /* ===== WORKSHOPS ===== */
