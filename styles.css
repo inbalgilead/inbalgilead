@@ -589,6 +589,42 @@ footer {
     scroll-snap-align: start;
   }
 
+  /* Services grid: horizontal swipe carousel with peek */
+  .services-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 1.25rem;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+  }
+  .services-grid::-webkit-scrollbar { display: none; }
+  .service {
+    flex: 0 0 72%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  /* Workshops grid: horizontal swipe carousel with peek */
+  .workshops-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 1.25rem;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+  }
+  .workshops-grid::-webkit-scrollbar { display: none; }
+  .workshop {
+    flex: 0 0 80%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
   /* Carousel: full-width swipeable cards, hide buttons */
   .carousel-btn { display: none; }
   .carousel-wrapper { gap: 0; }
