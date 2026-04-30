@@ -571,7 +571,23 @@ footer {
 @media (max-width: 600px) {
   .hero { padding: 3rem 1.5rem; }
   .about, .services, .workshops, .content-section { padding: 4rem 1.5rem; }
-  .pillars { grid-template-columns: 1fr 1fr; }
+  /* Pillars: horizontal swipe carousel with peek */
+  .pillars {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 1.25rem;
+    padding-bottom: 0.5rem;
+    margin-top: 2.5rem;
+  }
+  .pillars::-webkit-scrollbar { display: none; }
+  .pillar {
+    flex: 0 0 72%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
 
   /* Carousel: full-width swipeable cards, hide buttons */
   .carousel-btn { display: none; }
