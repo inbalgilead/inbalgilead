@@ -565,12 +565,16 @@ footer {
   .pillars { grid-template-columns: repeat(2, 1fr); }
   .services-grid { grid-template-columns: 1fr; gap: 2rem; }
   .workshops-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .content-grid { grid-template-columns: repeat(2, 1fr); }
+  .content-card { flex: 0 0 280px; }
 }
 
 @media (max-width: 600px) {
   .hero { padding: 3rem 1.5rem; }
   .about, .services, .workshops, .content-section { padding: 4rem 1.5rem; }
   .pillars { grid-template-columns: 1fr 1fr; }
-  .content-grid { grid-template-columns: 1fr; }
+
+  /* Carousel: full-width swipeable cards, hide buttons */
+  .carousel-btn { display: none; }
+  .carousel-wrapper { gap: 0; }
+  .content-card { flex: 0 0 85vw; }
 }
