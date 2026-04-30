@@ -46,11 +46,12 @@ nav {
 }
 
 .nav-inner {
-  max-width: 1060px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .nav-name {
@@ -74,6 +75,54 @@ nav ul a {
 }
 
 nav ul a:hover { color: #a4896f; }
+
+/* Hamburger button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  background-color: #231f20;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Animate hamburger → X */
+.nav-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+@media (max-width: 640px) {
+  .nav-toggle { display: flex; }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin-top: 0.75rem;
+    border-top: 1px solid #d4cbbf;
+  }
+
+  nav ul.open { display: flex; }
+
+  nav ul li a {
+    display: block;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #d4cbbf;
+    font-size: 1rem;
+  }
+}
 
 /* ===== HERO ===== */
 .hero {
@@ -122,11 +171,11 @@ nav ul a:hover { color: #a4896f; }
   display: inline-block;
   background-color: #231f20;
   color: #e8e0d8;
-  padding: 0.85rem 2.2rem;
+  padding: 0.68rem 1.76rem;
   border-radius: 2rem;
   font-family: 'Livvic', sans-serif;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.88rem;
   letter-spacing: 0.02em;
   transition: background-color 0.2s;
 }
