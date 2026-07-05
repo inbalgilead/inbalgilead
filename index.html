@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1TN1HCM82"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G1TN1HCM82');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inbal Gilead</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,7 +42,7 @@
       <h1>Inbal Gilead</h1>
       <p class="tagline">I'm a product leader with a deep data edge, helping teams build smarter, faster, and more confidently.</p>
       <div class="hero-links">
-        <a href="One Pager.pdf" download class="btn-cta">Work With Me</a>
+        <a href="One Pager.pdf" download class="btn-cta" data-analytics-event="work_with_me_click" data-analytics-section="hero">Work With Me</a>
       </div>
     </div>
     <div class="hero-photo">
@@ -118,7 +126,7 @@
       <p class="section-closing">Whether it's a big strategic shift or a specific challenge you're facing, I'm always happy to contribute my perspective and help you think it through.</p>
 
       <div class="services-cta">
-        <a href="One Pager.pdf" download class="btn-cta btn-cta-sm">Work With Me</a>
+        <a href="One Pager.pdf" download class="btn-cta btn-cta-sm" data-analytics-event="work_with_me_click" data-analytics-section="services">Work With Me</a>
       </div>
 
       <!-- LOGO STRIP -->
@@ -180,18 +188,18 @@
           <iframe src="https://open.spotify.com/embed/episode/15V1ry1dPMB0Sym6mIz8i8" width="100%" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           <p class="content-title">Founders &amp; Product</p>
         </div>
-        <a class="content-card content-link" href="https://medium.com/ziprecruiter-tech/retro-is-the-stepson-of-planning-3a1b340ff8f9" target="_blank">
+        <a class="content-card content-link" href="https://medium.com/ziprecruiter-tech/retro-is-the-stepson-of-planning-3a1b340ff8f9" target="_blank" data-analytics-event="content_card_click" data-analytics-label="Retro is the stepson of planning">
           <img src="retro is the stepson of planning.webp" alt="Retro is the stepson of planning" class="content-img" />
           <p class="content-title">Retro is the stepson of planning</p>
         </a>
-        <a class="content-card content-link" href="https://www.youtube.com/watch?v=80YqgMMUwJg" target="_blank">
+        <a class="content-card content-link" href="https://www.youtube.com/watch?v=80YqgMMUwJg" target="_blank" data-analytics-event="content_card_click" data-analytics-label="HayaData 2025 Product Mindset Makes Good Analysts">
           <div class="yt-thumb">
             <img src="https://img.youtube.com/vi/80YqgMMUwJg/hqdefault.jpg" alt="HayaData 2025 — Product Mindset Makes Good Analysts" class="content-img" />
             <div class="yt-play">&#9654;</div>
           </div>
           <p class="content-title">HayaData 2025 — Product Mindset Makes Good Analysts</p>
         </a>
-        <a class="content-card content-link" href="https://medium.com/@gi.inbal/product-mindset-makes-good-analysts-75f63331cd45" target="_blank">
+        <a class="content-card content-link" href="https://medium.com/@gi.inbal/product-mindset-makes-good-analysts-75f63331cd45" target="_blank" data-analytics-event="content_card_click" data-analytics-label="Product Mindset Makes Good Analysts">
           <img src="product mindset makes good analysts.webp" alt="Product Mindset Makes Good Analysts" class="content-img" />
           <p class="content-title">Product Mindset Makes Good Analysts</p>
         </a>
@@ -205,13 +213,13 @@
   <footer id="contact">
     <div class="footer-inner">
       <span>Contact me</span>
-      <a href="https://www.linkedin.com/in/inbal-gilead/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/inbal-gilead/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-analytics-event="linkedin_click" data-analytics-section="footer">
         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#231f20"><rect width="24" height="24" rx="4"/><path d="M6.5 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5 10h3v9H5v-9zm5 0h2.9v1.3h.04C13.36 10.5 14.4 10 15.7 10c2.9 0 3.3 1.9 3.3 4.4V19h-3v-4c0-1 0-2.2-1.4-2.2-1.4 0-1.6 1.1-1.6 2.1V19H10v-9z" fill="#e8e0d8"/></svg>
       </a>
-      <a href="mailto:inbalgilead@gmail.com" aria-label="Email">
+      <a href="mailto:inbalgilead@gmail.com" aria-label="Email" data-analytics-event="email_click" data-analytics-section="footer">
         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#231f20"><rect width="24" height="24" rx="12"/><path d="M5 8l7 5 7-5M5 8v8h14V8H5z" stroke="#e8e0d8" stroke-width="1.5" fill="none"/></svg>
       </a>
-      <a href="https://sessionize.com/InbalGilead/" target="_blank" rel="noopener noreferrer" aria-label="Sessionize speaker profile">
+      <a href="https://sessionize.com/InbalGilead/" target="_blank" rel="noopener noreferrer" aria-label="Sessionize speaker profile" data-analytics-event="sessionize_click" data-analytics-section="footer">
         <img src="sessionize-logo.png" alt="Sessionize" class="footer-logo" />
       </a>
     </div>
@@ -263,6 +271,20 @@
     });
     document.querySelector('.carousel-next').addEventListener('click', () => {
       carousel.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+    });
+  </script>
+
+  <script>
+    document.querySelectorAll('[data-analytics-event]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag !== 'function') return;
+
+        gtag('event', link.dataset.analyticsEvent, {
+          link_text: link.dataset.analyticsLabel || link.textContent.trim() || link.getAttribute('aria-label') || '',
+          link_url: link.href,
+          section: link.dataset.analyticsSection || link.closest('section, footer')?.id || ''
+        });
+      });
     });
   </script>
 </body>
