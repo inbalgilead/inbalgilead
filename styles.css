@@ -167,7 +167,7 @@ nav ul a[href="#contact"]:hover {
 }
 
 .hero-highlight {
-  color: #3f5f78;
+  color: #5e1d1e;
 }
 
 .hero-statement p {
@@ -352,7 +352,7 @@ nav ul a[href="#contact"]:hover {
   font-size: 1.08rem;
   font-weight: 400;
   line-height: 1.55;
-  color: #3f5f78;
+  color: #5e1d1e;
   margin-bottom: 1rem;
 }
 
@@ -535,7 +535,7 @@ nav ul a[href="#contact"]:hover {
   font-size: 1.12rem;
   font-weight: 550;
   line-height: 1.35;
-  color: #3f5f78;
+  color: #5e1d1e;
   text-align: right;
 }
 
@@ -853,7 +853,7 @@ footer::before {
   font-size: 1.12rem;
   font-weight: 550;
   line-height: 1.35;
-  color: #3f5f78;
+  color: #5e1d1e;
 }
 
 .footer-inner {
