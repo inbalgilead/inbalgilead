@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1TN1HCM82"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G1TN1HCM82', {
+      page_title: 'AI Adoption One Pager',
+      page_path: '/ai-adoption-enablement/'
+    });
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Adoption Enablement | Inbal Gilead</title>
+  <link rel="icon" href="../favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&amp;family=Livvic:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="policy-page">
+  <main class="policy-main">
+    <h1>AI Adoption Enablement</h1>
+    <p class="policy-updated">Opening the one pager...</p>
+
+    <section class="policy-section">
+      <p>If the PDF does not open automatically, <a id="pdfLink" href="../one-pagers/ai-adoption-enablement.pdf">open it here</a>.</p>
+    </section>
+  </main>
+
+  <script>
+    const pdfUrl = '../one-pagers/ai-adoption-enablement.pdf';
+    let didOpen = false;
+
+    function openPdf() {
+      if (didOpen) return;
+      didOpen = true;
+      window.location.href = pdfUrl;
+    }
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'ai_adoption_one_pager_open', {
+        link_url: pdfUrl,
+        section: 'ai_adoption_enablement',
+        event_callback: openPdf,
+        event_timeout: 1200
+      });
+      setTimeout(openPdf, 1400);
+    } else {
+      setTimeout(openPdf, 300);
+    }
+
+    document.getElementById('pdfLink').addEventListener('click', () => {
+      if (typeof gtag !== 'function') return;
+
+      gtag('event', 'ai_adoption_one_pager_click', {
+        link_url: pdfUrl,
+        section: 'ai_adoption_enablement'
+      });
+    });
+  </script>
+</body>
+</html>

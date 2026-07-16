@@ -32,9 +32,15 @@ The shared listener sends:
 | `linkedin_click` | Visitor clicks the footer LinkedIn icon | Footer contact links | `link_text`, `link_url`, `section` |
 | `email_click` | Visitor clicks the footer email icon | Footer contact links | `link_text`, `link_url`, `section` |
 | `sessionize_click` | Visitor clicks the footer Sessionize icon | Footer contact links | `link_text`, `link_url`, `section` |
+| `ai_adoption_one_pager_open` | Visitor lands on the tracked AI Adoption one pager URL before being sent to the PDF | `/ai-adoption-enablement/` | `link_url`, `section` |
+| `ai_adoption_one_pager_legacy_pdf_open` | Visitor lands on the previously shared direct PDF URL before being sent to the PDF | `/ai-adoption-enablement.pdf` | `link_url`, `section` |
+| `ai_adoption_one_pager_click` | Visitor clicks the fallback PDF link on the tracked AI Adoption one pager page | `/ai-adoption-enablement/` | `link_url`, `section` |
 
 ## Notes
 
 - GA4 may take up to 48 hours to show new data in standard reports.
 - Use Realtime reports or DebugView for quick checks after changes.
 - For source tracking, prefer UTM links where the site URL is shared from controlled surfaces such as LinkedIn, email signatures, newsletters, or speaker profiles.
+- Direct PDF files do not run Google Analytics. Use `https://inbalgilead.com/ai-adoption-enablement/` for new shares.
+- The previously shared `https://inbalgilead.com/ai-adoption-enablement.pdf` URL now resolves through a tracked page before opening the PDF.
+- The actual PDF file is stored at `https://inbalgilead.com/one-pagers/ai-adoption-enablement.pdf`.
