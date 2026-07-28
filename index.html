@@ -34,7 +34,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#workshops">Workshops</a></li>
         <li><a href="#content">Content</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" data-analytics-event="contact_nav_click" data-analytics-section="navigation">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -308,9 +308,15 @@
 
     document.querySelector('.carousel-prev').addEventListener('click', () => {
       carousel.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+      trackAnalyticsEvent('content_carousel_navigation', {
+        section_name: 'content'
+      });
     });
     document.querySelector('.carousel-next').addEventListener('click', () => {
       carousel.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+      trackAnalyticsEvent('content_carousel_navigation', {
+        section_name: 'content'
+      });
     });
   </script>
 
@@ -336,10 +342,18 @@
     if (testimonialSlides.length > 1) {
       testimonialPrev.addEventListener('click', () => {
         showTestimonial(testimonialIndex - 1);
+        trackAnalyticsEvent('testimonial_navigation', {
+          section_name: 'testimonials',
+          item_name: testimonialSlides[testimonialIndex].querySelector('figcaption')?.textContent.trim() || ''
+        });
         restartTestimonials();
       });
       testimonialNext.addEventListener('click', () => {
         showTestimonial(testimonialIndex + 1);
+        trackAnalyticsEvent('testimonial_navigation', {
+          section_name: 'testimonials',
+          item_name: testimonialSlides[testimonialIndex].querySelector('figcaption')?.textContent.trim() || ''
+        });
         restartTestimonials();
       });
       restartTestimonials();
@@ -347,17 +361,37 @@
   </script>
 
   <script>
-    document.querySelectorAll('[data-analytics-event]').forEach(link => {
-      link.addEventListener('click', () => {
-        if (typeof gtag !== 'function') return;
+    function trackAnalyticsEvent(eventName, parameters = {}) {
+      if (typeof gtag !== 'function') return;
+      gtag('event', eventName, parameters);
+    }
 
-        gtag('event', link.dataset.analyticsEvent, {
-          link_text: link.dataset.analyticsLabel || link.textContent.trim() || link.getAttribute('aria-label') || '',
-          link_url: link.href,
-          section: link.dataset.analyticsSection || link.closest('section, footer')?.id || ''
+    document.querySelectorAll('[data-analytics-event]').forEach(element => {
+      element.addEventListener('click', () => {
+        trackAnalyticsEvent(element.dataset.analyticsEvent, {
+          link_text: element.dataset.analyticsLabel || element.textContent.trim() || element.getAttribute('aria-label') || '',
+          link_url: element.href || '',
+          section_name: element.dataset.analyticsSection || element.closest('section, footer')?.id || ''
         });
       });
     });
+
+    const observedSections = document.querySelectorAll('section[id], footer[id]');
+    const viewedSections = new Set();
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const sectionName = entry.target.id;
+        if (!entry.isIntersecting || viewedSections.has(sectionName)) return;
+
+        viewedSections.add(sectionName);
+        trackAnalyticsEvent('section_view', {
+          section_name: sectionName
+        });
+        sectionObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.25 });
+
+    observedSections.forEach(section => sectionObserver.observe(section));
   </script>
 </body>
 </html>
