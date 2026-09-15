@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1TN1HCM82"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G1TN1HCM82', {
+    page_title: 'AI Strategy Service',
+    page_path: '/ai-strategy-service/'
+  });
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Is Your AI Working?</title>
@@ -282,7 +293,7 @@
   .part p { margin: 0; font-size: 0.98rem; }
   .part .opt { color: var(--muted); font-style: italic; }
   #about .wrap { max-width: 64rem; }
-  #about .intro { max-width: var(--maxw); margin-bottom: 1.5rem; }
+  #about .intro { max-width: var(--maxw); margin: 0 auto 1.5rem; padding: 0 1.5rem; }
   .people {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -391,7 +402,7 @@
 
   @media (max-width: 800px) {
     .people { grid-template-columns: 1fr; }
-    #about .intro { max-width: none; }
+    #about .intro { max-width: none; padding: 0; }
   }
 
   @media (max-width: 520px) {
@@ -431,12 +442,12 @@
       <li>A clear view of what&rsquo;s in use now, what it costs, and what value you&rsquo;re getting from it.</li>
       <li>A prioritized plan to improve ROI against your selected goal &mdash; including build, buy, fix, or drop strategies tailored to your team and use case.</li>
     </ul>
-    <a class="cta" href="#contact">Request a meeting</a>
+    <a class="cta" href="#contact" data-analytics-event="ai_strategy_hero_cta_click" data-analytics-section="hero">Request a meeting</a>
     <p class="hero-shape">Most Reviews run two to three weeks, scoped to one department.</p>
   </div>
 </header>
 
-<section class="reveal">
+<section class="reveal" id="five-pillars" data-analytics-section="five-pillars">
   <div class="wrap">
     <h2>The five pillars we assess</h2>
     <p>
@@ -488,7 +499,7 @@
   </div>
 </section>
 
-<section class="reveal">
+<section class="reveal" id="review" data-analytics-section="review">
   <div class="wrap">
     <h2>What the Review gives you</h2>
     <p>
@@ -528,7 +539,7 @@
   </div>
 </section>
 
-<section class="reveal">
+<section class="reveal" id="independence" data-analytics-section="independence">
   <div class="wrap">
     <h2>Independent by design</h2>
     <p>
@@ -578,7 +589,7 @@
   </div>
 </section>
 
-<section class="reveal" id="about">
+<section class="reveal" id="about" data-analytics-section="about">
   <div class="wrap">
     <div class="intro">
       <h2>Who you&rsquo;ll be working with</h2>
@@ -594,7 +605,7 @@
         <div>
           <div class="person-meta">
             <span class="label">Inbal Gilead</span>
-            <a href="https://www.linkedin.com/in/inbal-gilead" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/inbal-gilead" target="_blank" rel="noopener noreferrer" data-analytics-event="ai_strategy_linkedin_click" data-analytics-label="Inbal Gilead" data-analytics-section="about">LinkedIn</a>
           </div>
           <h3>Product Strategy &amp; Organizational Execution</h3>
           <p>Helps leadership teams turn ambiguous AI initiatives into clear goals, focused priorities, and measurable value &mdash; then leads the practical, cross-functional workflow changes needed to make them stick.</p>
@@ -606,7 +617,7 @@
         <div>
           <div class="person-meta">
             <span class="label">Mor Nitzan</span>
-            <a href="https://www.linkedin.com/in/mor-nitzan-b29a75110" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/mor-nitzan-b29a75110" target="_blank" rel="noopener noreferrer" data-analytics-event="ai_strategy_linkedin_click" data-analytics-label="Mor Nitzan" data-analytics-section="about">LinkedIn</a>
           </div>
           <h3>Data &amp; AI Ecosystem Expertise</h3>
           <p>Helps leadership teams navigate the evolving data and AI landscape &mdash; evaluating tools, strengthening organizational practices, and leading fit-for-purpose solutions from assessment through implementation.</p>
@@ -616,7 +627,7 @@
   </div>
 </section>
 
-<div class="closing" id="contact">
+<div class="closing" id="contact" data-analytics-section="contact">
   <div class="wrap">
     <p class="eyebrow">Get started</p>
     <h2>Ready to get more value from AI?</h2>
@@ -688,7 +699,7 @@
 <footer>
   <div class="wrap">
     <span>&copy; 2026 AI Strategy Service. All rights reserved.</span>
-    <span class="links"><a href="privacy.html">Privacy Policy</a> · <a href="https://www.linkedin.com/in/inbal-gilead" target="_blank" rel="noopener noreferrer">Inbal Gilead</a> · <a href="https://www.linkedin.com/in/mor-nitzan-b29a75110" target="_blank" rel="noopener noreferrer">Mor Nitzan</a></span>
+    <span class="links"><a href="privacy.html" data-analytics-event="ai_strategy_privacy_click" data-analytics-section="footer">Privacy Policy</a> · <a href="https://www.linkedin.com/in/inbal-gilead" target="_blank" rel="noopener noreferrer" data-analytics-event="ai_strategy_linkedin_click" data-analytics-label="Inbal Gilead" data-analytics-section="footer">Inbal Gilead</a> · <a href="https://www.linkedin.com/in/mor-nitzan-b29a75110" target="_blank" rel="noopener noreferrer" data-analytics-event="ai_strategy_linkedin_click" data-analytics-label="Mor Nitzan" data-analytics-section="footer">Mor Nitzan</a></span>
   </div>
 </footer>
 
@@ -705,6 +716,50 @@
       });
     }, { rootMargin: "0px 0px -10% 0px" });
     els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+<script>
+  (function () {
+    function trackAnalyticsEvent(eventName, parameters) {
+      if (typeof gtag !== "function") return;
+      gtag("event", eventName, parameters || {});
+    }
+
+    document.querySelectorAll("[data-analytics-event]").forEach(function (element) {
+      element.addEventListener("click", function () {
+        trackAnalyticsEvent(element.dataset.analyticsEvent, {
+          link_text: element.dataset.analyticsLabel || element.textContent.trim() || element.getAttribute("aria-label") || "",
+          link_url: element.href || "",
+          section_name: element.dataset.analyticsSection || ""
+        });
+      });
+    });
+
+    var form = document.querySelector("form[name='meeting-request']");
+    if (form) {
+      form.addEventListener("submit", function () {
+        trackAnalyticsEvent("ai_strategy_form_submit", {
+          section_name: "contact",
+          transport_type: "beacon"
+        });
+      });
+    }
+
+    if ("IntersectionObserver" in window) {
+      var viewedSections = new Set();
+      var sectionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var sectionName = entry.target.dataset.analyticsSection;
+          if (!entry.isIntersecting || viewedSections.has(sectionName)) return;
+          viewedSections.add(sectionName);
+          trackAnalyticsEvent("ai_strategy_section_view", { section_name: sectionName });
+          sectionObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.25 });
+      document.querySelectorAll("[data-analytics-section]:not(a)").forEach(function (section) {
+        sectionObserver.observe(section);
+      });
+    }
   })();
 </script>
 

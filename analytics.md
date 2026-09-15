@@ -39,6 +39,12 @@ The shared listener sends:
 | `ai_adoption_one_pager_open` | Visitor lands on the tracked AI Adoption one pager URL before being sent to the PDF | `/ai-adoption-enablement/` | `link_url`, `section` |
 | `ai_adoption_one_pager_legacy_pdf_open` | Visitor lands on the previously shared direct PDF URL before being sent to the PDF | `/ai-adoption-enablement.pdf` | `link_url`, `section` |
 | `ai_adoption_one_pager_click` | Visitor clicks the fallback PDF link on the tracked AI Adoption one pager page | `/ai-adoption-enablement/` | `link_url`, `section` |
+| `ai_strategy_section_view` | At least 25% of a tracked AI Strategy Service section becomes visible, once per page load | Five pillars, Review, Independence, About, Contact | `section_name` |
+| `ai_strategy_hero_cta_click` | Visitor clicks the hero `Request a meeting` CTA | `/ai-strategy-service/` hero | `link_text`, `link_url`, `section_name` |
+| `ai_strategy_linkedin_click` | Visitor clicks either founder's LinkedIn link | AI Strategy Service founder cards and footer | `link_text`, `link_url`, `section_name` |
+| `ai_strategy_privacy_click` | Visitor opens the service-specific privacy policy | AI Strategy Service footer | `link_text`, `link_url`, `section_name` |
+| `ai_strategy_form_submit` | Visitor submits a valid meeting-request form to FormSubmit | `/ai-strategy-service/` contact form | `section_name` |
+| `ai_strategy_form_success` | FormSubmit redirects the visitor to the success page after accepting the submission | `/ai-strategy-service/success.html` | `section_name` |
 
 ## Notes
 
