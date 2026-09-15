@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Is Your AI Working?</title>
+<meta name="description" content="An independent read on whether your organization's AI is delivering — mapped, scored against five pillars, and turned into a prioritized plan." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+<style>
+  :root {
+    --paper:   #ffffff;
+    --surface: #f2f6fc;
+    --ink:     #14202f;
+    --primary: #1a56c4;
+    --accent:  #1e63e0;
+    --muted:   #566579;
+    --border:  #d9e3f1;
+    --band-ink:#eef4ff;
+
+    --maxw: 40rem;
+    --serif: "Spectral", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #0d1626;
+      --surface: #152238;
+      --ink:     #e7eefb;
+      --primary: #8db4f2;
+      --accent:  #6fa2f4;
+      --muted:   #93a4bd;
+      --border:  #26374f;
+      --band-ink:#e7eefb;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:   #0d1626;
+    --surface: #152238;
+    --ink:     #e7eefb;
+    --primary: #8db4f2;
+    --accent:  #6fa2f4;
+    --muted:   #93a4bd;
+    --border:  #26374f;
+    --band-ink:#e7eefb;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1.25rem;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  /* ---- header band ---- */
+  .band {
+    background: var(--primary);
+    color: var(--band-ink);
+    border-bottom: 1px solid var(--border);
+  }
+  :root[data-theme="dark"] .band,
+  :root:not([data-theme="light"]) .band {
+    background: var(--surface);
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .band { background: var(--primary); }
+  }
+
+  .band .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+  }
+  .band .mark {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+  }
+  .band .legend {
+    color: var(--band-ink);
+    opacity: 0.66;
+    text-transform: uppercase;
+  }
+  .band a.legend { text-decoration: none; opacity: 0.8; }
+  .band a.legend:hover { opacity: 1; }
+
+  /* ---- hero ---- */
+  .hero { padding: 4rem 0 3.5rem; }
+  .hero h1 {
+    font-size: clamp(2.1rem, 6vw, 3.15rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.5rem;
+  }
+  .hero p.lede {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0 0 1.75rem;
+  }
+  .hero .hero-list { margin: 0 0 2rem; }
+  .hero .hero-list li { margin-bottom: 0.7rem; }
+  .hero-shape {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 1.5rem 0 0;
+  }
+
+  .cta {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--paper);
+    background: var(--accent);
+    padding: 0.85rem 1.5rem;
+    border: 1px solid var(--accent);
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .cta:hover { background: transparent; color: var(--accent); }
+  .cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  :root[data-theme="dark"] .cta,
+  :root:not([data-theme="light"]) .cta { color: #0d1626; }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .cta { color: var(--paper); }
+  }
+
+  /* ---- generic section ---- */
+  section { padding: 3.25rem 0; border-top: 1px solid var(--border); }
+  section h2 {
+    font-size: clamp(1.5rem, 4vw, 1.95rem);
+    line-height: 1.2;
+    margin: 0 0 1.5rem;
+  }
+  section p { margin: 0 0 1.1rem; }
+  section p:last-child { margin-bottom: 0; }
+  strong { font-weight: 600; }
+
+  .checklist { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+  .checklist li {
+    position: relative;
+    padding-left: 1.9rem;
+    margin-bottom: 0.95rem;
+  }
+  .checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0.15rem;
+    top: 0.55rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    background: var(--accent);
+  }
+
+  /* ---- framework ---- */
+  .scale-note {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 0 2.25rem;
+    letter-spacing: 0.03em;
+  }
+  .scale { display: inline-flex; gap: 0.28rem; }
+  .scale i {
+    width: 0.62rem; height: 0.62rem;
+    border: 1px solid var(--accent);
+    display: block;
+  }
+  .scale i:first-child { background: var(--accent); }
+
+  .practice {
+    display: grid;
+    grid-template-columns: 2.4rem 1fr;
+    gap: 0.4rem 1.1rem;
+    padding: 1.6rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .practice:first-of-type { border-top: none; }
+  .practice .num {
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    color: var(--accent);
+    padding-top: 0.15rem;
+  }
+  .practice h3 {
+    margin: 0 0 0.45rem;
+    font-size: 1.24rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .practice .good { margin: 0 0 0.55rem; }
+  .practice .check {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .practice .check b {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  /* ---- offer ---- */
+  .part {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .part .label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .included-badge {
+    display: inline-block;
+    margin-left: 0.55rem;
+    padding: 0.2rem 0.45rem;
+    background: var(--accent);
+    color: var(--paper);
+    font-size: 0.64rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+  }
+  .part h3 { margin: 0 0 0.5rem; font-size: 1.18rem; font-weight: 600; }
+  .part p { margin: 0; font-size: 0.98rem; }
+  .part .opt { color: var(--muted); font-style: italic; }
+  #about .wrap { max-width: 64rem; }
+  #about .intro { max-width: var(--maxw); margin-bottom: 1.5rem; }
+  .people {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .part.person { display: flex; gap: 1.1rem; align-items: flex-start; }
+  .people .part.person { height: 100%; margin: 0; }
+  .part.person img {
+    width: 76px; height: 76px; border-radius: 50%;
+    object-fit: cover; flex: none;
+  }
+  .person-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .person-meta .label { margin: 0; }
+  .person-meta a {
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .person-meta a:hover { color: var(--accent); }
+
+  .pullquote {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-style: italic;
+    border-left: 2px solid var(--accent);
+    padding-left: 1.25rem;
+    margin: 1.9rem 0 0;
+    color: var(--ink);
+  }
+
+  /* ---- closing ---- */
+  .closing { border-top: 1px solid var(--border); }
+  .closing .wrap { padding-top: 4rem; padding-bottom: 5rem; }
+  .closing h2 { font-size: clamp(1.6rem, 4.5vw, 2.2rem); margin-bottom: 1.25rem; }
+  .contact-intro { margin-bottom: 2rem; }
+  .contact-form { display: grid; gap: 1.25rem; }
+  .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .field { display: grid; gap: 0.4rem; }
+  .field label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .field .optional { color: var(--muted); font-weight: 400; }
+  .field input, .field textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    padding: 0.75rem 0.85rem;
+  }
+  .field textarea { min-height: 7rem; resize: vertical; }
+  .field input:focus, .field textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .form-note { color: var(--muted); font-size: 0.9rem; margin: 0; }
+  .bot-field { position: absolute; left: -9999px; }
+  .back-to-top-wrap { display: flex; justify-content: flex-end; margin: 2rem 0 0; }
+  .back-to-top {
+    display: inline-grid;
+    place-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    line-height: 1;
+    text-decoration: none;
+  }
+  .back-to-top:hover { background: var(--accent); color: var(--paper); }
+  .back-to-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 0 3rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+  }
+  footer a { color: inherit; }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 800px) {
+    .people { grid-template-columns: 1fr; }
+    #about .intro { max-width: none; }
+  }
+
+  @media (max-width: 520px) {
+    .form-row { grid-template-columns: 1fr; }
+    .part.person { display: block; }
+    .part.person img { margin-bottom: 1rem; }
+    footer .wrap { display: block; }
+    footer .links { margin-top: 0.75rem; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms ease, transform 600ms ease; }
+    .reveal.in { opacity: 1; transform: none; }
+  }
+</style>
+
+</head>
+<body id="top">
+<div class="band">
+  <div class="wrap">
+    <span class="mark">AI Strategy Service</span>
+    <a class="legend" href="#about">About</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">AI Strategy and stack</p>
+    <h1>Your AI spend keeps going up. What do you have to show for it?</h1>
+    <p class="lede">
+      An independent review of how your team actually uses AI —
+      scored against a curated standard of what works, turned into a
+      prioritized plan.
+    </p>
+    <ul class="checklist hero-list">
+      <li>A scored five-pillar assessment, with detailed gap identification and recommendations.</li>
+      <li>A clear view of what&rsquo;s in use now, what it costs, and what value you&rsquo;re getting from it.</li>
+      <li>A prioritized plan to improve ROI against your selected goal &mdash; including build, buy, fix, or drop strategies tailored to your team and use case.</li>
+    </ul>
+    <a class="cta" href="#contact">Request a meeting</a>
+    <p class="hero-shape">Most Reviews run two to three weeks, scoped to one department.</p>
+  </div>
+</header>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>The five pillars we assess</h2>
+    <p>
+      Organizations that get real value from AI are strong across five
+      vendor-neutral principles. We score your team across all five, with
+      detailed gap identification, clear explanations, and practical
+      recommendations for what to do next.
+    </p>
+
+    <div class="practice">
+      <span class="num">01</span>
+      <div>
+        <h3>Strategic intent, value &amp; prioritization</h3>
+        <p class="good">Every AI initiative starts with a problem worth solving, a clear outcome, a baseline, and an accountable owner. If the problem is wrong, we reset it before evaluating options or making recommendations against it.</p>
+      </div>
+    </div>
+
+    <div class="practice">
+      <span class="num">02</span>
+      <div>
+        <h3>Sanctioned access &amp; fast intake</h3>
+        <p class="good">Everyone who needs access can get it safely, and any newly identified use case is easy to flag, review, and handle.</p>
+      </div>
+    </div>
+
+    <div class="practice">
+      <span class="num">03</span>
+      <div>
+        <h3>Usage &amp; cost visibility</h3>
+        <p class="good">AIOps measures provide full observability into usage and cost, down to per-task token utilization.</p>
+      </div>
+    </div>
+
+    <div class="practice">
+      <span class="num">04</span>
+      <div>
+        <h3>Enablement &amp; shared context</h3>
+        <p class="good">Role-specific training, internal champions, shared prompt and playbook libraries, and one trusted source of company knowledge that people and AI both draw from.</p>
+      </div>
+    </div>
+
+    <div class="practice">
+      <span class="num">05</span>
+      <div>
+        <h3>AI inside core workflows</h3>
+        <p class="good">AI is built into the daily work, not bolted on in a separate tab.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>What the Review gives you</h2>
+    <p>
+      An evidence-backed answer on whether your AI is paying off, and a
+      plan for what to do next. No vendor pitch.
+    </p>
+    <p>The Review includes the assessment and recommendations. Implementation is optional and priced separately.</p>
+
+    <div class="part">
+      <span class="label">Part 1</span>
+      <h3>the Review</h3>
+      <p>Full visibility into what you have now, assessed against the five pillars and backed by evidence you can verify &mdash; including the tools no one approved.</p>
+    </div>
+
+    <div class="part">
+      <span class="label">Part 2 <strong class="included-badge">Included in the Review</strong></span>
+      <h3>The Recommendations</h3>
+      <p>Every gap ranked and marked build, buy, fix, or leave alone &mdash; with the scores and a three-year cost comparison where it matters, plus a recommended owner and cadence so the plan sticks.</p>
+    </div>
+
+    <div class="part">
+      <span class="label">Part 3 &mdash; optional</span>
+      <h3>The Fix</h3>
+      <p>When you want support carrying the plan through, we lead the implementation &mdash; whether that means deploying a selected tool, building internally, or consolidating what you already run &mdash; with one accountable delivery lead from decision to rollout.</p>
+    </div>
+
+    <p class="pullquote">
+      The Review gives you a decision-ready snapshot at a specific point in
+      time. The findings and
+      recommendations are yours to act on with your team, a partner you
+      choose, or us.
+    </p>
+    <p style="font-size:0.95rem;color:var(--muted);margin-top:1.5rem;">
+      Security &amp; compliance teams take part as stakeholders, but are not our
+      core audience.
+    </p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>Independent by design</h2>
+    <p>
+      You're paying for the truth about your AI strategy and stack, so the advice
+      has to stay yours. Four ways we guarantee an objective Review and recommendations.
+    </p>
+
+    <div class="part">
+      <span class="label">Pricing</span>
+      <h3>One fee, agreed before the work begins</h3>
+      <p>
+        Set upfront based on scope, regardless of the recommendations made.
+        Never a cut of what you spend or save.
+      </p>
+    </div>
+
+    <div class="part">
+      <span class="label">Unbound and transparent</span>
+      <h3>Our vendor arrangements don't pick your tools</h3>
+      <p>
+        We maintain transparent referral and partnership agreements. None
+        are exclusive, and some compete within the same category. A
+        recommendation may include a partner or a provider we have no
+        arrangement with; we disclose any relevant relationship before you decide.
+      </p>
+    </div>
+
+    <div class="part">
+      <span class="label">The honest answers</span>
+      <h3>"Keep what you have" and "build it" are real outcomes</h3>
+      <p>We recommend both often.</p>
+    </div>
+
+    <div class="part">
+      <span class="label">Market vetting</span>
+      <h3>We've vetted the market hands-on</h3>
+      <p>
+        Every tool on our shortlist we've tested ourselves, with a proof
+        of concept where it counts. We track the market continuously.
+      </p>
+    </div>
+
+    <p>
+      Review results and recommendations are objective and client-verifiable. Tool
+      recommendations are a separate, clearly marked part of the work.
+    </p>
+  </div>
+</section>
+
+<section class="reveal" id="about">
+  <div class="wrap">
+    <div class="intro">
+      <h2>Who you&rsquo;ll be working with</h2>
+      <p>
+        Two complementary perspectives on the same challenge: what your AI
+        ecosystem needs, and how to turn it into measurable organizational value.
+      </p>
+    </div>
+
+    <div class="people">
+      <div class="part person">
+        <img src="inbal.png" alt="Inbal Gilead" width="76" height="76" />
+        <div>
+          <div class="person-meta">
+            <span class="label">Inbal Gilead</span>
+            <a href="https://www.linkedin.com/in/inbal-gilead" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <h3>Product Strategy &amp; Organizational Execution</h3>
+          <p>Helps leadership teams turn ambiguous AI initiatives into clear goals, focused priorities, and measurable value &mdash; then leads the practical, cross-functional workflow changes needed to make them stick.</p>
+        </div>
+      </div>
+
+      <div class="part person">
+        <img src="mor.jpg" alt="Mor Nitzan" width="76" height="76" />
+        <div>
+          <div class="person-meta">
+            <span class="label">Mor Nitzan</span>
+            <a href="https://www.linkedin.com/in/mor-nitzan-b29a75110" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <h3>Data &amp; AI Ecosystem Expertise</h3>
+          <p>Helps leadership teams navigate the evolving data and AI landscape &mdash; evaluating tools, strengthening organizational practices, and leading fit-for-purpose solutions from assessment through implementation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="closing" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Get started</p>
+    <h2>Ready to get more value from AI?</h2>
+    <p class="contact-intro">
+      Tell us what is already in motion, where the uncertainty sits, and what
+      outcomes matter. We&rsquo;ll review the context and invite you to a focused
+      working session to explore what a Review could cover, who should be
+      involved, and what working together might look like.
+    </p>
+    <p>Share a little context so we can make the first conversation useful:</p>
+
+    <form class="contact-form" name="meeting-request" method="POST" action="https://formsubmit.co/inbalgilead@gmail.com">
+      <input type="hidden" name="_cc" value="mor.nitzan3007@gmail.com">
+      <input type="hidden" name="_next" value="https://inbalgilead.com/ai-strategy-service/success.html">
+      <input type="hidden" name="_subject" value="New AI Strategy Service meeting request">
+      <input type="hidden" name="_template" value="table">
+      <p class="bot-field"><label>Don&rsquo;t fill this out: <input name="_honey"></label></p>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Work email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="organization">Organization</label>
+          <input id="organization" name="organization" type="text" autocomplete="organization" required>
+        </div>
+        <div class="field">
+          <label for="role">Role</label>
+          <input id="role" name="role" type="text" autocomplete="organization-title" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="appeal">What specifically appeals to you about our offer?</label>
+        <textarea id="appeal" name="what-appeals-to-you" required></textarea>
+      </div>
+      <div class="field">
+        <label for="timing">What decision or deadline is driving your timing?</label>
+        <textarea id="timing" name="timing" required></textarea>
+      </div>
+      <div class="field">
+        <label for="gap">What do you think is your biggest AI-related gap or challenge? <span class="optional">Optional</span></label>
+        <textarea id="gap" name="biggest-ai-gap"></textarea>
+      </div>
+      <div class="field">
+        <label for="focus">Which team or function should the Review focus on? <span class="optional">Optional</span></label>
+        <input id="focus" name="review-focus" type="text">
+      </div>
+      <div class="field">
+        <label for="anything-else">Anything else you&rsquo;d like to share? <span class="optional">Optional</span></label>
+        <textarea id="anything-else" name="anything-else"></textarea>
+      </div>
+
+      <p class="form-note">We&rsquo;ll use this information only to review your request and suggest a useful next step.</p>
+      <p><button class="cta" type="submit">Request a meeting</button></p>
+    </form>
+    <p class="back-to-top-wrap"><a class="back-to-top" href="#top" aria-label="Back to top">&uarr;</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 AI Strategy Service. All rights reserved.</span>
+    <span class="links"><a href="privacy.html">Privacy Policy</a> · <a href="https://www.linkedin.com/in/inbal-gilead" target="_blank" rel="noopener noreferrer">Inbal Gilead</a> · <a href="https://www.linkedin.com/in/mor-nitzan-b29a75110" target="_blank" rel="noopener noreferrer">Mor Nitzan</a></span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      els.forEach(function (el) { el.classList.add("in"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body></html>
