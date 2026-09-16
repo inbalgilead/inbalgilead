@@ -31,7 +31,18 @@
       </button>
       <ul id="navMenu">
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li class="nav-dropdown">
+          <a class="nav-dropdown-trigger" href="#services" aria-haspopup="true">Services <span aria-hidden="true">&#8964;</span></a>
+          <ul class="nav-submenu" aria-label="Service pages">
+            <li><a href="one-pagers/product-support.pdf" target="_blank" rel="noopener noreferrer" data-analytics-event="product_support_pdf_click" data-analytics-section="navigation">Strategic Product Support</a></li>
+            <li class="nav-submenu-group">
+              <a href="one-pagers/ai-adoption-enablement.pdf" target="_blank" rel="noopener noreferrer" data-analytics-event="ai_adoption_pdf_click" data-analytics-section="navigation">AI Adoption Enablement</a>
+              <ul class="nav-submenu-nested">
+                <li><a href="ai-strategy-service/" data-analytics-event="ai_strategy_service_click" data-analytics-section="navigation">AI Strategy Review <span>with Mor Nitzan</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li><a href="#workshops">Workshops</a></li>
         <li><a href="#content">Content</a></li>
         <li><a href="#contact" data-analytics-event="contact_nav_click" data-analytics-section="navigation">Contact</a></li>
@@ -119,14 +130,15 @@
 
       <div class="services-grid">
         <div class="service">
-          <h3>Product &amp; Cross-Functional Strategy</h3>
+          <h3><a href="one-pagers/product-support.pdf" target="_blank" rel="noopener noreferrer" data-analytics-event="product_support_pdf_click" data-analytics-section="services">Product &amp; Cross-Functional Strategy</a></h3>
           <p>For founders and leadership teams navigating complex product, PMF, growth, GTM, operating clarity, or cross-functional execution questions where ownership, priorities, and execution are unclear.</p>
           <p>I help teams clarify the real problem, align around goals, sharpen assumptions, make better decisions, and turn strategic ambiguity into practical forward motion.</p>
         </div>
         <div class="service">
-          <h3>Data &amp; AI Adoption Enablement</h3>
+          <h3><a href="one-pagers/ai-adoption-enablement.pdf" target="_blank" rel="noopener noreferrer" data-analytics-event="ai_adoption_pdf_click" data-analytics-section="services">Data &amp; AI Adoption Enablement</a></h3>
           <p>For data, analytics, product, and leadership teams trying to turn AI and data from scattered efforts into a trusted, shared organizational asset.</p>
           <p>This can include AI adoption strategy, redesigning data and analytics workflows, building internal skills and routines, team enablement through workshops, and hands-on support in tracking and improving the plan as it moves through the organization.</p>
+          <p class="service-related"><a href="ai-strategy-service/" data-analytics-event="ai_strategy_service_click" data-analytics-section="services">Explore the AI Strategy Review</a> for an independent practical assessment of your AI adoption, stack, and ROI.</p>
         </div>
       </div>
 
