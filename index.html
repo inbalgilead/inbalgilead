@@ -187,14 +187,35 @@
 
       <p class="section-subhead">Popular sessions include:</p>
 
-      <div class="workshops-grid">
-        <div class="workshop">
-          <h3>The Data Advantage:<br/>Building Skills for Product Managers</h3>
-          <p>An actionable half-day workshop on using data to make better product decisions — focusing on metrics, hypotheses, and intuition to solve real-world product challenges.</p>
+      <div class="workshops-showcase">
+        <div class="speaking-carousel" id="speakingCarousel" aria-label="Inbal Gilead speaking at events">
+          <div class="speaking-slides">
+            <img class="speaking-slide is-active" src="speaking-hayadata.jpg" alt="Inbal Gilead speaking at an event" />
+            <img class="speaking-slide" src="speaking-maccabi.jpg" alt="Inbal Gilead speaking at an event" loading="lazy" />
+            <img class="speaking-slide" src="speaking-product-talk.jpg" alt="Inbal Gilead speaking at an event" loading="lazy" />
+            <img class="speaking-slide" src="speaking-large-stage.jpg" alt="Inbal Gilead speaking at an event" loading="lazy" />
+          </div>
+          <div class="speaking-controls">
+            <button class="speaking-btn speaking-prev" type="button" aria-label="Previous speaking photo">&#8592;</button>
+            <div class="speaking-dots" aria-label="Choose speaking photo">
+              <button class="speaking-dot is-active" type="button" aria-label="Photo 1" aria-current="true"></button>
+              <button class="speaking-dot" type="button" aria-label="Photo 2"></button>
+              <button class="speaking-dot" type="button" aria-label="Photo 3"></button>
+              <button class="speaking-dot" type="button" aria-label="Photo 4"></button>
+            </div>
+            <button class="speaking-btn speaking-next" type="button" aria-label="Next speaking photo">&#8594;</button>
+          </div>
         </div>
-        <div class="workshop">
-          <h3>Planning Inspiration</h3>
-          <p>A facilitation-driven workshop that guides leadership teams through strategy, prioritization, and roadmap creation. Throughout the workshop, I share my philosophy on prioritizing outcomes over tasks, aligning on success definition from day 1, and more.</p>
+
+        <div class="workshops-grid">
+          <div class="workshop">
+            <h3>The Data Advantage:<br/>Building Skills for Product Managers</h3>
+            <p>An actionable half-day workshop on using data to make better product decisions — focusing on metrics, hypotheses, and intuition to solve real-world product challenges.</p>
+          </div>
+          <div class="workshop">
+            <h3>Planning Inspiration</h3>
+            <p>A facilitation-driven workshop that guides leadership teams through strategy, prioritization, and roadmap creation. Throughout the workshop, I share my philosophy on prioritizing outcomes over tasks, aligning on success definition from day 1, and more.</p>
+          </div>
         </div>
       </div>
 
@@ -343,6 +364,36 @@
       trackAnalyticsEvent('content_carousel_navigation', {
         section_name: 'content'
       });
+    });
+  </script>
+
+  <script>
+    const speakingSlides = Array.from(document.querySelectorAll('#speakingCarousel .speaking-slide'));
+    const speakingDots = Array.from(document.querySelectorAll('#speakingCarousel .speaking-dot'));
+    const speakingPrev = document.querySelector('.speaking-prev');
+    const speakingNext = document.querySelector('.speaking-next');
+    let speakingIndex = 0;
+
+    function showSpeakingPhoto(index) {
+      speakingIndex = (index + speakingSlides.length) % speakingSlides.length;
+      speakingSlides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('is-active', slideIndex === speakingIndex);
+      });
+      speakingDots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === speakingIndex;
+        dot.classList.toggle('is-active', isActive);
+        if (isActive) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    speakingPrev.addEventListener('click', () => showSpeakingPhoto(speakingIndex - 1));
+    speakingNext.addEventListener('click', () => showSpeakingPhoto(speakingIndex + 1));
+    speakingDots.forEach((dot, dotIndex) => {
+      dot.addEventListener('click', () => showSpeakingPhoto(dotIndex));
     });
   </script>
 
