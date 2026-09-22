@@ -53,7 +53,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-statement">
-      <h1><span class="hero-highlight">Real impact </span>from product, data, and AI work rarely stalls for lack of trying.</h1>
+      <h1><span class="hero-highlight">Real impact </span>rarely stalls for lack of trying.</h1>
       <p>It stalls when goals, ownership, and workflows are unclear.</p>
     </div>
     <div class="hero-intro">
@@ -71,11 +71,10 @@
           <img src="photo.jpg" alt="Inbal Gilead" onerror="this.style.display='none'" />
         </div>
         <div class="about-copy">
-          <p class="about-opening">I help teams turn complexity into clear strategy, practical workflows, and measurable progress by asking sharper questions, aligning faster, and focusing on impact.</p>
           <p>I'm a product and data leader with nearly two decades of experience across startups and scaled tech companies, and a track record of complex cross-functional execution.</p>
           <p>My roots are in data, across analytics, data engineering, and data science.</p>
           <p>I later transitioned into product leadership, leading data and AI products, infrastructure platforms, and developer tools.</p>
-          <p>For the past two years, I’ve worked with founders and leadership teams on challenges where strategy, product, AI, and execution are tangled together.</p>
+          <p>For the past two years, I’ve been working with founders and leadership teams on challenges where strategy, product, AI, and execution are tangled together.</p>
         </div>
       </div>
 
@@ -221,6 +220,11 @@
       <div class="carousel-wrapper">
         <button class="carousel-btn carousel-prev" aria-label="Previous">&#8592;</button>
         <div class="content-grid" id="contentCarousel">
+        <a class="content-card content-link" href="https://medium.com/@gi.inbal/its-never-been-easier-to-build-and-never-been-harder-to-build-something-that-holds-0de569be4c2e" target="_blank" rel="noopener noreferrer" data-analytics-event="content_card_click" data-analytics-label="It’s Never Been Easier to Build, and Never Been Harder to Build Something That Holds">
+          <span class="content-badge">NEW</span>
+          <img src="build-something-that-holds.png" alt="It’s Never Been Easier to Build, and Never Been Harder to Build Something That Holds" class="content-img" />
+          <p class="content-title">It’s Never Been Easier to Build, and Never Been Harder to Build Something That Holds</p>
+        </a>
         <div class="content-card">
           <iframe src="https://open.spotify.com/embed/episode/6aKH5829EoRrmgrXof1MFi" width="100%" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
           <p class="content-title">DATA &amp; AI | מדברים עם מור ניצן</p>
@@ -295,26 +299,36 @@
 
   <script>
     const carousel = document.getElementById('contentCarousel');
-    const cardWidth = () => carousel.querySelector('.content-card').offsetWidth + 24; // card + gap
+    const cardWidth = () => {
+      const gap = parseFloat(getComputedStyle(carousel).columnGap) || 0;
+      return carousel.querySelector('.content-card').offsetWidth + gap;
+    };
+    const originalCards = Array.from(carousel.children);
+    const loopWidth = () => cardWidth() * originalCards.length;
 
-    // Clone cards for infinite effect
-    const originals = Array.from(carousel.children);
-    originals.forEach(card => carousel.appendChild(card.cloneNode(true)));
-    originals.forEach(card => carousel.insertBefore(card.cloneNode(true), carousel.firstChild));
+    const createCarouselClone = card => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      if (clone.matches('a, button, iframe, [tabindex]')) clone.tabIndex = -1;
+      clone.querySelectorAll('a, button, iframe, [tabindex]').forEach(element => {
+        element.tabIndex = -1;
+      });
+      return clone;
+    };
 
-    const totalOriginals = originals.length;
+    originalCards.forEach(card => carousel.appendChild(createCarouselClone(card)));
+    originalCards.slice().reverse().forEach(card => carousel.prepend(createCarouselClone(card)));
 
-    // Start at the first real card (after the prepended clones)
-    carousel.scrollLeft = cardWidth() * totalOriginals;
+    requestAnimationFrame(() => {
+      carousel.scrollLeft = loopWidth();
+    });
 
-    // Silently jump when hitting cloned zones
     carousel.addEventListener('scroll', () => {
-      const maxReal = cardWidth() * totalOriginals * 2;
-      const minReal = cardWidth() * totalOriginals;
-      if (carousel.scrollLeft >= maxReal) {
-        carousel.scrollLeft -= cardWidth() * totalOriginals;
-      } else if (carousel.scrollLeft <= 0) {
-        carousel.scrollLeft += cardWidth() * totalOriginals;
+      const width = loopWidth();
+      if (carousel.scrollLeft >= width * 2 - 1) {
+        carousel.scrollLeft -= width;
+      } else if (carousel.scrollLeft <= 1) {
+        carousel.scrollLeft += width;
       }
     });
 

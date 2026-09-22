@@ -240,14 +240,14 @@ nav {
 }
 
 .hero-statement {
-  flex: 0 0 470px;
-  max-width: 470px;
+  flex: 1 1 0;
+  max-width: none;
   text-align: left;
 }
 
 .hero-statement h1 {
   font-family: 'Livvic', sans-serif;
-  font-size: clamp(1.98rem, 3.18vw, 3.42rem);
+  font-size: clamp(2.18rem, 3.5vw, 3.76rem);
   font-weight: 400;
   line-height: 1.04;
   margin-bottom: 1.35rem;
@@ -266,7 +266,8 @@ nav {
 }
 
 .hero-intro {
-  max-width: 640px;
+  flex: 2 1 0;
+  max-width: none;
   text-align: left;
 }
 
@@ -284,6 +285,10 @@ nav {
   line-height: 1.7;
   margin-bottom: 2rem;
   max-width: 640px;
+}
+
+.hero-intro .tagline:last-child {
+  margin-bottom: 0;
 }
 
 .hero-links {
@@ -405,7 +410,7 @@ nav {
 
 .about-story {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 0;
   max-width: 1270px;
@@ -834,6 +839,7 @@ nav {
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding-top: 1rem;
   padding-bottom: 0.5rem;
   text-align: left;
 }
@@ -852,7 +858,24 @@ nav {
   flex-direction: column;
   gap: 0.75rem;
   flex: 0 0 320px;
+  position: relative;
   scroll-snap-align: start;
+}
+
+.content-badge {
+  position: absolute;
+  top: 0;
+  right: 0.7rem;
+  z-index: 1;
+  transform: translateY(-50%);
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  background: #5e1d1e;
+  color: #f4eee8;
+  font-family: 'Livvic', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .content-img {
@@ -1070,6 +1093,7 @@ footer::before {
     flex: 0 1 auto;
     max-width: 560px;
   }
+  .hero-intro { flex: 0 1 auto; }
   .hero-statement,
   .hero-intro { text-align: left; }
   .tagline { margin-bottom: 2rem; }
