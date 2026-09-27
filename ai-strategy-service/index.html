@@ -17,17 +17,17 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>img{max-width:100%}[hidden]{display:none!important}</style>
 <title>AI Strategy Consulting &amp; AI Assessment | Inbal Gilead</title>
-<meta name="description" content="Independent AI strategy consulting for leadership teams: assess AI tools, adoption, costs and ROI, then get a prioritized plan to build, buy, fix or stop." />
+<meta name="description" content="An independent read on whether your organization's AI is delivering — mapped, scored against five pillars, and turned into a prioritized plan." />
 <link rel="canonical" href="https://inbalgilead.com/ai-strategy-service/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Inbal Gilead" />
 <meta property="og:title" content="AI Strategy Consulting &amp; AI Assessment" />
-<meta property="og:description" content="An independent assessment of your AI tools, adoption, costs and ROI, turned into a prioritized plan for what to build, buy, fix or stop." />
+<meta property="og:description" content="An independent read on whether your organization's AI is delivering — mapped, scored against five pillars, and turned into a prioritized plan." />
 <meta property="og:url" content="https://inbalgilead.com/ai-strategy-service/" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="AI Strategy Consulting &amp; AI Assessment" />
-<meta name="twitter:description" content="Assess your AI tools, adoption, costs and ROI, then get a prioritized, vendor-neutral action plan." />
+<meta name="twitter:description" content="An independent read on whether your organization's AI is delivering — mapped, scored against five pillars, and turned into a prioritized plan." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
@@ -50,36 +50,6 @@
   "audience": {
     "@type": "BusinessAudience",
     "audienceType": "Leadership teams evaluating AI strategy, adoption and return on investment"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "AI Strategy Service",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "AI Strategy Review",
-          "description": "A five-pillar assessment of current AI tools, usage, costs, workflows and organizational enablement."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "AI Strategy Recommendations",
-          "description": "Prioritized recommendations on what to build, buy, fix, retain or stop."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "AI Implementation Support",
-          "description": "Optional implementation support for selected tools, internal builds and AI stack consolidation."
-        }
-      }
-    ]
   }
 }
 </script>
@@ -175,6 +145,7 @@
   }
 
   .band .wrap {
+    max-width: 68rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -189,10 +160,7 @@
     text-transform: uppercase;
     letter-spacing: 0.18em;
     font-weight: 500;
-    color: inherit;
-    text-decoration: none;
   }
-  .band .mark:hover { opacity: 0.82; }
   .band .legend {
     color: var(--band-ink);
     opacity: 0.66;
@@ -202,7 +170,17 @@
   .band a.legend:hover { opacity: 1; }
 
   /* ---- hero ---- */
-  .hero { padding: 4rem 0 3.5rem; }
+  .hero { padding: 5rem 0 4.5rem; }
+  .hero .wrap {
+    max-width: 68rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: stretch;
+  }
+  .hero-main,
+  .hero-side { display: flex; flex-direction: column; }
+  .hero-main .cta { align-self: flex-start; margin-top: auto; }
   .hero h1 {
     font-size: clamp(2.1rem, 6vw, 3.15rem);
     line-height: 1.12;
@@ -217,12 +195,109 @@
   }
   .hero .hero-list { margin: 0 0 2rem; }
   .hero .hero-list li { margin-bottom: 0.7rem; }
-  .hero-shape {
+  .hero-callout {
+    margin: auto 0 0;
+    padding: 1.1rem 1.25rem;
+    border-left: 2px solid var(--accent);
+    background: var(--surface);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .hero-callout b {
     font-family: var(--mono);
-    font-size: 0.76rem;
-    letter-spacing: 0.04em;
+    font-weight: 500;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.35rem;
+    white-space: nowrap;
+  }
+  .hero-side { padding-top: 4.1rem; }
+
+  /* ---- pillar stack ---- */
+  #pillars { background: var(--surface); }
+  #pillars .wrap { max-width: 52rem; }
+  .pillar-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-top: 2rem;
+  }
+  .pillar-stack { display: grid; gap: 0.55rem; margin: 0; }
+  .pillar-flow {
+    height: 1rem;
+    display: grid;
+    place-items: center;
     color: var(--muted);
-    margin: 1.5rem 0 0;
+    font-family: var(--mono);
+  }
+  .pillar-flow::before { content: "↓"; }
+  .pillar-operating-layers {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .pillar-layer {
+    width: 100%;
+    min-height: 4.7rem;
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 0.9rem;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background 120ms ease, border-color 120ms ease;
+  }
+  .pillar-layer:hover,
+  .pillar-layer[aria-pressed="true"] { border-color: var(--accent); background: var(--surface); }
+  .pillar-layer:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .pillar-layer.business { width: 100%; }
+  .pillar-layer .num {
+    width: 2.45rem;
+    height: 2.45rem;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-weight: 500;
+  }
+  :root[data-theme="dark"] .pillar-layer .num,
+  :root:not([data-theme="light"]) .pillar-layer .num { color: #0d1626; }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .pillar-layer .num { color: var(--paper); }
+  }
+  .pillar-layer .label { display: block; font-weight: 600; line-height: 1.3; }
+  .pillar-layer .role {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .pillar-detail {
+    height: 100%;
+    padding: 1.15rem 1.25rem;
+    border-left: 2px solid var(--accent);
+    background: var(--paper);
+  }
+  .pillar-detail h3 { margin: 0 0 0.55rem; font-size: 1.12rem; }
+  .pillar-detail p { margin: 0; color: var(--muted); }
+  @media (max-width: 760px) {
+    .pillar-layout { grid-template-columns: 1fr; }
+    .pillar-detail { height: auto; min-height: 8rem; }
+  }
+  @media (max-width: 520px) {
+    .pillar-layer { grid-template-columns: 2.6rem 1fr; padding: 0.75rem; }
+    .pillar-layer .num { width: 2.1rem; height: 2.1rem; }
   }
 
   .cta {
@@ -240,6 +315,7 @@
   }
   .cta:hover { background: transparent; color: var(--accent); }
   .cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
   :root[data-theme="dark"] .cta,
   :root:not([data-theme="light"]) .cta { color: #0d1626; }
   @media (prefers-color-scheme: light) {
@@ -247,7 +323,7 @@
   }
 
   /* ---- generic section ---- */
-  section { padding: 3.25rem 0; border-top: 1px solid var(--border); }
+  section { padding: 4.75rem 0; border-top: 1px solid var(--border); }
   section h2 {
     font-size: clamp(1.5rem, 4vw, 1.95rem);
     line-height: 1.2;
@@ -271,62 +347,6 @@
     width: 0.55rem;
     height: 0.55rem;
     background: var(--accent);
-  }
-
-  /* ---- framework ---- */
-  .scale-note {
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    margin: 0 0 2.25rem;
-    letter-spacing: 0.03em;
-  }
-  .scale { display: inline-flex; gap: 0.28rem; }
-  .scale i {
-    width: 0.62rem; height: 0.62rem;
-    border: 1px solid var(--accent);
-    display: block;
-  }
-  .scale i:first-child { background: var(--accent); }
-
-  .practice {
-    display: grid;
-    grid-template-columns: 2.4rem 1fr;
-    gap: 0.4rem 1.1rem;
-    padding: 1.6rem 0;
-    border-top: 1px solid var(--border);
-  }
-  .practice:first-of-type { border-top: none; }
-  .practice .num {
-    font-family: var(--mono);
-    font-size: 0.95rem;
-    color: var(--accent);
-    padding-top: 0.15rem;
-  }
-  .practice h3 {
-    margin: 0 0 0.45rem;
-    font-size: 1.24rem;
-    font-weight: 600;
-    line-height: 1.3;
-  }
-  .practice .good { margin: 0 0 0.55rem; }
-  .practice .check {
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--muted);
-  }
-  .practice .check b {
-    font-family: var(--mono);
-    font-weight: 500;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    display: block;
-    margin-bottom: 0.15rem;
   }
 
   /* ---- offer ---- */
@@ -358,8 +378,51 @@
   .part h3 { margin: 0 0 0.5rem; font-size: 1.18rem; font-weight: 600; }
   .part p { margin: 0; font-size: 0.98rem; }
   .part .opt { color: var(--muted); font-style: italic; }
+  .offer-section .wrap,
+  .independence-section .wrap { max-width: 68rem; }
+  .section-intro { max-width: none; margin-bottom: 2.5rem; }
+  .offer-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  .offer-steps .part {
+    margin: 0;
+    padding: 1.4rem 0;
+    background: transparent;
+    border: 0;
+    border-top: 2px solid var(--accent);
+  }
+  .offer-steps .part .label { min-height: 2.6rem; }
+  .offer-steps .part h3 { min-height: 3rem; }
+  .offer-steps .pullquote {
+    grid-column: 1 / 3;
+    margin: 0;
+    padding: 1.25rem 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .offer-steps .part:nth-of-type(3) { grid-column: 3; grid-row: 1 / 3; }
+  .independence-section { background: var(--surface); }
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 2.5rem;
+  }
+  .principles-grid .part {
+    margin: 0;
+    padding: 1.4rem 0;
+    background: transparent;
+    border: 0;
+    border-top: 1px solid var(--border);
+  }
+  .independence-note {
+    font-family: var(--serif);
+    font-style: italic;
+    margin-top: 2.5rem;
+  }
   #about .wrap { max-width: 64rem; }
-  #about .intro { max-width: var(--maxw); margin: 0 auto 1.5rem; padding: 0 1.5rem; }
+  #about .intro { max-width: var(--maxw); margin-bottom: 1.5rem; }
   .people {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -400,7 +463,7 @@
   }
 
   /* ---- closing ---- */
-  .closing { border-top: 1px solid var(--border); }
+  .closing { border-top: 1px solid var(--border); background: var(--surface); }
   .closing .wrap { padding-top: 4rem; padding-bottom: 5rem; }
   .closing h2 { font-size: clamp(1.6rem, 4.5vw, 2.2rem); margin-bottom: 1.25rem; }
   .contact-intro { margin-bottom: 2rem; }
@@ -431,21 +494,6 @@
   }
   .form-note { color: var(--muted); font-size: 0.9rem; margin: 0; }
   .bot-field { position: absolute; left: -9999px; }
-  .back-to-top-wrap { display: flex; justify-content: flex-end; margin: 2rem 0 0; }
-  .back-to-top {
-    display: inline-grid;
-    place-items: center;
-    width: 1.75rem;
-    height: 1.75rem;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    font-family: var(--mono);
-    font-size: 0.8rem;
-    line-height: 1;
-    text-decoration: none;
-  }
-  .back-to-top:hover { background: var(--accent); color: var(--paper); }
-  .back-to-top:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
   footer {
     border-top: 1px solid var(--border);
@@ -467,11 +515,26 @@
   footer a:hover { color: var(--accent); }
 
   @media (max-width: 800px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 0; }
+    .hero-side { padding-top: 2.5rem; }
+    .offer-steps { grid-template-columns: 1fr; gap: 0.5rem; }
+    .offer-steps .part .label,
+    .offer-steps .part h3 { min-height: 0; }
+    .offer-steps .pullquote,
+    .offer-steps .part:nth-of-type(3) { grid-column: auto; grid-row: auto; }
+    .offer-steps .part:nth-of-type(1) { order: 1; }
+    .offer-steps .part:nth-of-type(2) { order: 2; }
+    .offer-steps .part:nth-of-type(3) { order: 3; }
+    .offer-steps .pullquote { order: 4; }
+    .principles-grid { grid-template-columns: 1fr; }
     .people { grid-template-columns: 1fr; }
-    #about .intro { max-width: none; padding: 0; }
+    #about .intro { max-width: none; }
   }
 
   @media (max-width: 520px) {
+    .hero { padding: 3.5rem 0; }
+    section { padding: 3.5rem 0; }
+    .hero-callout b { font-size: 0.68rem; white-space: normal; }
     .form-row { grid-template-columns: 1fr; }
     .part.person { display: block; }
     .part.person img { margin-bottom: 1rem; }
@@ -489,167 +552,197 @@
 <body id="top">
 <div class="band">
   <div class="wrap">
-    <a class="mark" href="/" aria-label="Inbal Gilead home">AI Strategy Service</a>
-    <a class="legend" href="#about">About</a>
+    <span class="mark">AI Strategy Service</span>
+    <a class="legend" href="#about">The team</a>
   </div>
 </div>
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">Independent AI strategy consulting</p>
-    <h1>AI Strategy Review: Is your AI spend paying off?</h1>
-    <p class="lede">
-      An independent AI strategy and readiness assessment of how your team
-      actually uses AI &mdash; scored against a curated standard of what works
-      and turned into a prioritized plan.
-    </p>
-    <ul class="checklist hero-list">
-      <li>A scored five-pillar assessment, with detailed gap identification and recommendations.</li>
-      <li>A clear view of what&rsquo;s in use now, what it costs, and what value you&rsquo;re getting from it.</li>
-      <li>A prioritized plan to improve ROI against your selected goal &mdash; including build, buy, fix, or drop strategies tailored to your team and use case.</li>
-    </ul>
-    <a class="cta" href="#contact" data-analytics-event="ai_strategy_hero_cta_click" data-analytics-section="hero">Request a meeting</a>
-    <p class="hero-shape">Most Reviews run two to three weeks, scoped to one department.</p>
+    <div class="hero-main">
+      <p class="eyebrow">AI Strategy and stack</p>
+      <h1>Your AI spend keeps going up. What do you have to show for it?</h1>
+      <p class="lede">
+        An independent review of how your team actually uses AI &mdash;<br>
+        scored against a curated standard of what works,<br>
+        turned into a prioritized plan.
+      </p>
+      <a class="cta" href="#contact" data-analytics-event="ai_strategy_hero_cta_click" data-analytics-section="hero">Request a meeting</a>
+    </div>
+
+    <div class="hero-side">
+      <ul class="checklist hero-list">
+        <li>A scored five-pillar assessment, with detailed gap identification and recommendations.</li>
+        <li>A clear view of what&rsquo;s in use now, what it costs, and what value you&rsquo;re getting from it.</li>
+        <li>A prioritized plan to increase impact against your selected goals &mdash; including build, buy, fix, or keep strategies tailored to your team and use case.</li>
+      </ul>
+      <p class="hero-callout">
+        <b>Already have an internal owner for your AI agenda?</b>
+        Great! They&rsquo;ll be a key stakeholder for us to work with.<br>
+        Internal AI owners often sit within a specific department or need
+        support across the breadth of experience required to drive these
+        efforts organization-wide.
+      </p>
+    </div>
   </div>
 </header>
 
-<section class="reveal" id="five-pillars" data-analytics-section="five-pillars">
+<section class="reveal" id="pillars" data-analytics-section="pillars">
   <div class="wrap">
-    <h2>Our five-pillar AI readiness assessment</h2>
+    <h2>The five pillars we assess</h2>
     <p>
       Organizations that get real value from AI are strong across five
-      vendor-neutral principles. We score your team across all five, with
-      detailed gap identification, clear explanations, and practical
-      recommendations for what to do next.
+      principles. For every pillar, we score performance and identify gaps,
+      leveraging your data against industry references. We show the supporting
+      evidence and provide traceable, verifiable explanations, followed by
+      practical recommendations for what to do next.
     </p>
 
-    <div class="practice">
-      <span class="num">01</span>
-      <div>
-        <h3>Strategic intent, value &amp; prioritization</h3>
-        <p class="good">Every AI initiative starts with a problem worth solving, a clear outcome, a baseline, and an accountable owner. If the problem is wrong, we reset it before evaluating options or making recommendations against it.</p>
-      </div>
-    </div>
+    <div class="pillar-layout">
+      <div class="pillar-stack" aria-label="The five AI capability pillars arranged as organizational layers">
+      <button class="pillar-layer business" type="button" data-key="01" aria-pressed="true">
+        <span class="num">01</span>
+        <span>
+          <span class="label">Business intent, use cases &amp; desirable outcomes</span>
+          <span class="role">Defines what the organization is trying to achieve</span>
+        </span>
+      </button>
 
-    <div class="practice">
-      <span class="num">02</span>
-      <div>
-        <h3>Sanctioned access &amp; fast intake</h3>
-        <p class="good">Everyone who needs access can get it safely, and any newly identified use case is easy to flag, review, and handle.</p>
-      </div>
-    </div>
+      <div class="pillar-flow" aria-hidden="true"></div>
 
-    <div class="practice">
-      <span class="num">03</span>
-      <div>
-        <h3>Usage &amp; cost visibility</h3>
-        <p class="good">AIOps measures provide full observability into usage and cost, down to per-task token utilization.</p>
-      </div>
-    </div>
+      <div class="pillar-operating-layers">
+        <button class="pillar-layer" type="button" data-key="02" aria-pressed="false">
+          <span class="num">02</span>
+          <span>
+            <span class="label">Consumption patterns &amp; adoption</span>
+            <span class="role">How people and agentic AI use capabilities in real work</span>
+          </span>
+        </button>
 
-    <div class="practice">
-      <span class="num">04</span>
-      <div>
-        <h3>Enablement &amp; shared context</h3>
-        <p class="good">Role-specific training, internal champions, shared prompt and playbook libraries, and one trusted source of company knowledge that people and AI both draw from.</p>
-      </div>
-    </div>
+        <button class="pillar-layer" type="button" data-key="03" aria-pressed="false">
+          <span class="num">03</span>
+          <span>
+            <span class="label">Data foundation &amp; governance</span>
+            <span class="role">The trusted organizational context underneath AI</span>
+          </span>
+        </button>
 
-    <div class="practice">
-      <span class="num">05</span>
-      <div>
-        <h3>AI inside core workflows</h3>
-        <p class="good">AI is built into the daily work, not bolted on in a separate tab.</p>
+        <button class="pillar-layer" type="button" data-key="04" aria-pressed="false">
+          <span class="num">04</span>
+          <span>
+            <span class="label">AI infrastructure &amp; orchestration</span>
+            <span class="role">The shared models, gateways, tools and controls</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="pillar-flow" aria-hidden="true"></div>
+
+      <button class="pillar-layer observability" type="button" data-key="05" aria-pressed="false">
+        <span class="num">05</span>
+        <span>
+          <span class="label">Observability &amp; continuous evaluation</span>
+          <span class="role">Measures the whole system and feeds learning back into it</span>
+        </span>
+      </button>
+      </div>
+
+      <div class="pillar-detail" aria-live="polite">
+        <h3>01 &mdash; Business intent, use cases &amp; desirable outcomes</h3>
+        <p>AI initiatives are tied to real business needs, clear owners, and measurable outcomes. We assess how use cases are selected, prioritized, and revisited to verify that they are solving the right problem and creating value.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="reveal" id="review" data-analytics-section="review">
+<section class="reveal offer-section" data-analytics-section="review">
   <div class="wrap">
-    <h2>What the AI Strategy Review gives you</h2>
-    <p>
-      An evidence-backed answer on whether your AI is paying off, and a
-      plan for what to do next. No vendor pitch.
-    </p>
-    <p>The Review includes the assessment and recommendations. Implementation is optional and priced separately.</p>
-
-    <div class="part">
-      <span class="label">Part 1</span>
-      <h3>the Review</h3>
-      <p>Full visibility into what you have now, assessed against the five pillars and backed by evidence you can verify &mdash; including the tools no one approved.</p>
+    <div class="section-intro">
+      <h2>What the Review gives you</h2>
+      <p>
+        An evidence-backed answer on how your AI is paying off, and a suggested
+        plan for how to improve and stay on track.
+      </p>
+      <p>The Review includes the assessment and recommendations. Implementation is optional and priced separately.</p>
     </div>
 
-    <div class="part">
-      <span class="label">Part 2 <strong class="included-badge">Included in the Review</strong></span>
-      <h3>The Recommendations</h3>
-      <p>Every gap ranked and marked build, buy, fix, or leave alone &mdash; with the scores and a three-year cost comparison where it matters, plus a recommended owner and cadence so the plan sticks.</p>
-    </div>
+    <div class="offer-steps">
+      <div class="part">
+        <span class="label">Part 1 &mdash; the anchor</span>
+        <h3>The Review</h3>
+        <p>The fullest picture your data allows, assessed against the five pillars and backed by evidence you can verify &mdash; including the tools no one approved.</p>
+      </div>
 
-    <div class="part">
-      <span class="label">Part 3 &mdash; optional</span>
-      <h3>The Fix</h3>
-      <p>When you want support carrying the plan through, we lead the implementation &mdash; whether that means deploying a selected tool, building internally, or consolidating what you already run &mdash; with one accountable delivery lead from decision to rollout.</p>
-    </div>
+      <div class="part">
+        <span class="label">Part 2 <strong class="included-badge">Included in the Review</strong></span>
+        <h3>The Recommendations</h3>
+        <p>Every gap ranked and marked build, buy, fix, or keep &mdash; with the scores and a three-year cost comparison where it matters, plus a recommended owner and cadence so the plan sticks.</p>
+      </div>
 
-    <p class="pullquote">
-      The Review gives you a decision-ready snapshot at a specific point in
-      time. The findings and
-      recommendations are yours to act on with your team, a partner you
-      choose, or us.
-    </p>
-    <p style="font-size:0.95rem;color:var(--muted);margin-top:1.5rem;">
-      Security &amp; compliance teams take part as stakeholders, but are not our
-      core audience.
-    </p>
+      <p class="pullquote">
+        The findings and recommendations are yours to act on with your team, a
+        partner you choose, or us.
+      </p>
+
+      <div class="part">
+        <span class="label">Part 3 &mdash; optional</span>
+        <h3>The Fix</h3>
+        <p>When you want support carrying the plan through, we lead the implementation &mdash; whether that means deploying a selected tool, building internally, or consolidating what you already run &mdash; with one accountable delivery lead from decision to rollout.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="reveal" id="independence" data-analytics-section="independence">
+<section class="reveal independence-section" data-analytics-section="independence">
   <div class="wrap">
-    <h2>Independent by design</h2>
-    <p>
-      You're paying for the truth about your AI strategy and stack, so the advice
-      has to stay yours. Four ways we guarantee an objective Review and recommendations.
-    </p>
-
-    <div class="part">
-      <span class="label">Pricing</span>
-      <h3>One fee, agreed before the work begins</h3>
+    <div class="section-intro">
+      <h2>Independent by design</h2>
       <p>
-        Set upfront based on scope, regardless of the recommendations made.
-        Never a cut of what you spend or save.
+        We provide the truth about your AI strategy and stack. This is what
+        guides our work, with four principles designed to keep it that way.
       </p>
     </div>
 
-    <div class="part">
-      <span class="label">Unbound and transparent</span>
-      <h3>Our vendor arrangements don't pick your tools</h3>
-      <p>
-        We maintain transparent referral and partnership agreements. None
-        are exclusive, and some compete within the same category. A
-        recommendation may include a partner or a provider we have no
-        arrangement with; we disclose any relevant relationship before you decide.
-      </p>
+    <div class="principles-grid">
+      <div class="part">
+        <span class="label">Pricing</span>
+        <h3>A known fee, agreed before the work begins</h3>
+        <p>
+          Set upfront based on scope, regardless of the recommendations made.
+          Never a cut of what you spend or save.
+        </p>
+      </div>
+
+      <div class="part">
+        <span class="label">Referral fees</span>
+        <h3>Our vendor arrangements don't pick your tools</h3>
+        <p>
+          We maintain transparent referral and partnership agreements. None
+          are exclusive, and some partners compete with one another. A
+          recommendation may include a partner or a provider we have no
+          arrangement with; we disclose any relevant relationship before you decide.
+        </p>
+      </div>
+
+      <div class="part">
+        <span class="label">The honest answers</span>
+        <h3>"Keep what you have" and "build it yourself" are real outcomes</h3>
+        <p>We recommend both often.</p>
+      </div>
+
+      <div class="part">
+        <span class="label">Market vetting</span>
+        <h3>We've vetted the market hands-on</h3>
+        <p>
+          Every tool on our shortlist we've evaluated hands-on. Where it
+          matters, we'll run a proof of concept together with you before
+          you commit. We track the market continuously.
+        </p>
+      </div>
     </div>
 
-    <div class="part">
-      <span class="label">The honest answers</span>
-      <h3>"Keep what you have" and "build it" are real outcomes</h3>
-      <p>We recommend both often.</p>
-    </div>
-
-    <div class="part">
-      <span class="label">Market vetting</span>
-      <h3>We've vetted the market hands-on</h3>
-      <p>
-        Every tool on our shortlist we've tested ourselves, with a proof
-        of concept where it counts. We track the market continuously.
-      </p>
-    </div>
-
-    <p>
-      Review results and recommendations are objective and client-verifiable. Tool
+    <p class="independence-note">
+      Review scores are neutral and client-verifiable. Tool
       recommendations are a separate, clearly marked part of the work.
     </p>
   </div>
@@ -661,7 +754,7 @@
       <h2>Who you&rsquo;ll be working with</h2>
       <p>
         Two complementary perspectives on the same challenge: what your AI
-        ecosystem needs, and how to turn it into measurable organizational value.
+        ecosystem&nbsp;needs,<br>and how to turn it into measurable organizational value.
       </p>
     </div>
 
@@ -703,7 +796,7 @@
       working session to explore what a Review could cover, who should be
       involved, and what working together might look like.
     </p>
-    <p>Share a little context so we can make the first conversation useful:</p>
+    <p>Share a little context so we can make the first conversation useful.</p>
 
     <form class="contact-form" name="meeting-request" method="POST" action="https://formsubmit.co/inbalgilead@gmail.com">
       <input type="hidden" name="_cc" value="mor.nitzan3007@gmail.com">
@@ -758,7 +851,6 @@
       <p class="form-note">We&rsquo;ll use this information only to review your request and suggest a useful next step.</p>
       <p><button class="cta" type="submit">Request a meeting</button></p>
     </form>
-    <p class="back-to-top-wrap"><a class="back-to-top" href="#top" aria-label="Back to top">&uarr;</a></p>
   </div>
 </div>
 
@@ -784,6 +876,47 @@
     els.forEach(function (el) { io.observe(el); });
   })();
 </script>
+
+<script>
+  (function () {
+    var layers = document.querySelectorAll(".pillar-layer");
+    var detail = document.querySelector(".pillar-detail");
+    if (!layers.length || !detail) return;
+    var copy = {
+      "01": {
+        title: "01 — Business intent, use cases & desirable outcomes",
+        body: "AI initiatives are tied to real business needs, clear owners, and measurable outcomes. We assess how use cases are selected, prioritized, and revisited to verify that they are solving the right problem and creating value."
+      },
+      "02": {
+        title: "02 — Consumption patterns & adoption",
+        body: "AI is accessible to the people who need it and embedded in the way work actually gets done. We examine approved and unapproved usage, workflow integration, adoption barriers, and how both people and agentic AI consume shared context, tools and capabilities."
+      },
+      "03": {
+        title: "03 — Data foundation & governance",
+        body: "AI draws on reliable, current, and well-governed organizational knowledge. We assess how structured and unstructured data is collected, modeled, maintained, accessed, and resolved into trusted context."
+      },
+      "04": {
+        title: "04 — AI infrastructure & orchestration",
+        body: "The technical foundation supports AI use safely and consistently at scale. We examine models, gateways, tool connections, permissions, routing, and the shared infrastructure used to build, buy, and operate AI capabilities."
+      },
+      "05": {
+        title: "05 — Observability & continuous evaluation",
+        body: "The organization can see how AI is being used, what it costs, and how well it performs. We assess usage, quality, latency, failures, drift, and evaluation practices—so teams can improve what works and intervene when it doesn’t."
+      }
+    };
+
+    layers.forEach(function (layer) {
+      layer.addEventListener("click", function () {
+        layers.forEach(function (item) { item.setAttribute("aria-pressed", "false"); });
+        layer.setAttribute("aria-pressed", "true");
+        var selected = copy[layer.dataset.key];
+        detail.querySelector("h3").textContent = selected.title;
+        detail.querySelector("p").textContent = selected.body;
+      });
+    });
+  })();
+</script>
+
 <script>
   (function () {
     function trackAnalyticsEvent(eventName, parameters) {
