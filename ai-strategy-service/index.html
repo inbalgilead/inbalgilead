@@ -937,6 +937,11 @@
     var form = document.querySelector("form[name='meeting-request']");
     if (form) {
       form.addEventListener("submit", function () {
+        try {
+          sessionStorage.setItem("ai_strategy_form_pending", Date.now().toString());
+        } catch (error) {
+          // Analytics should never prevent the form from being submitted.
+        }
         trackAnalyticsEvent("ai_strategy_form_submit", {
           section_name: "contact",
           transport_type: "beacon"

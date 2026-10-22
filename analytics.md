@@ -43,8 +43,8 @@ The shared listener sends:
 | `ai_strategy_hero_cta_click` | Visitor clicks the hero `Request a meeting` CTA | `/ai-strategy-service/` hero | `link_text`, `link_url`, `section_name` |
 | `ai_strategy_linkedin_click` | Visitor clicks either founder's LinkedIn link | AI Strategy Service founder cards and footer | `link_text`, `link_url`, `section_name` |
 | `ai_strategy_privacy_click` | Visitor opens the service-specific privacy policy | AI Strategy Service footer | `link_text`, `link_url`, `section_name` |
-| `ai_strategy_form_submit` | Visitor submits a valid meeting-request form to FormSubmit | `/ai-strategy-service/` contact form | `section_name` |
-| `ai_strategy_form_success` | FormSubmit redirects the visitor to the success page after accepting the submission | `/ai-strategy-service/success.html` | `section_name` |
+| `ai_strategy_form_submit` | Visitor submits a valid meeting-request form to FormSubmit; a temporary same-tab marker is stored for success verification | `/ai-strategy-service/` contact form | `section_name` |
+| `ai_strategy_form_success` | FormSubmit redirects the visitor to the success page within 30 minutes of a submission attempt in the same tab | `/ai-strategy-service/success.html` | `section_name` |
 
 ## Notes
 
@@ -52,6 +52,7 @@ The shared listener sends:
 - Use Realtime reports or DebugView for quick checks after changes.
 - The following event-scoped custom dimensions are registered in GA4: `section_name` as `Section name`, `item_name` as `Item name`, and `link_text` as `Link text`.
 - The following events are configured as key events with no default monetary value and a counting method of once per session: `work_with_me_click`, `email_click`, and `ai_adoption_one_pager_open`.
+- Direct visits to `/ai-strategy-service/success.html` do not fire `ai_strategy_form_success`; the event requires a recent submission marker from the form in the same browser tab.
 - For source tracking, prefer UTM links where the site URL is shared from controlled surfaces such as LinkedIn, email signatures, newsletters, or speaker profiles.
 - Direct PDF files do not run Google Analytics. Use `https://inbalgilead.com/ai-adoption-enablement/` for new shares.
 - The previously shared `https://inbalgilead.com/ai-adoption-enablement.pdf` URL now resolves through a tracked page before opening the PDF.
